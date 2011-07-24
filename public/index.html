@@ -10,9 +10,20 @@
 
   <body>
     <h1>Git Commands</h1>
+    <form action="#"> 
+      <input placeholder="Search…" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"> 
+    </form> 
 
-    <ul>
-      <li>Placeholder List for Commands</li>
-    </ul>
+    <div class="content">
+      <ul data-bind="template: {name:'command', foreach:commands}"></ul>
+    </div>
+
+    <script type="text/html" id="command">
+      <li>
+        <strong data-bind="text: name"></strong>:
+        <span data-bind="text: desc"></span>
+      </li>
+    </script>
+
   </body>
 </html>
